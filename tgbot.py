@@ -5,7 +5,7 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 import requests, json, logging
 
-updater = Updater(token='310866466:AAExdVyQjJ4QETWo6fpJU-KA6aknO6SmUds')
+updater = Updater(token='TOKEN')
 dispatcher = updater.dispatcher
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
