@@ -23,7 +23,7 @@ def start(bot, update):
     
     reply_markup = ReplyKeyboardMarkup(keyboard, one_time_keyboard='true')
     
-    update.message.reply_text('Please choose your ROM from below', reply_markup=reply_markup)
+    update.message.reply_text('Please choose your ROM from below:\nAICP\nLineage OS\nMoKee', reply_markup=reply_markup)
 
 def selectRom(bot, update):
     dispatcher.remove_handler(dispatcher.handlers[0][2])
@@ -59,7 +59,9 @@ def getAPI(bot, update):
     result = result.json()
     
     # 回复用户
-    update.message.reply_text("文件名：%s\n大小：%s\n下载地址：%s\nMD5：%s\n日志：%s" % (result['name'], result['size'], result['url'], result['md5'], result['log']))
+    update.message.reply_text("Filename: %s\nSize: %s\nURL: %s\nMD5：%s\nChangelog: %s" % (result['name'], result['size'], result['url'], result['md5'], result['log']))
+
+### deprecated ###
 
 # def button(bot, update):
 #     query = update.callback_query
@@ -83,11 +85,11 @@ def getAPI(bot, update):
 #     update.message.reply_text(u'是否只要最新版:', reply_markup=reply_markup)
 
 def help(bot, update):
-    update.message.reply_text("Use /start to test this bot.")
+    update.message.reply_text("Use /getrom to test this bot.")
 
 
 
-dispatcher.add_handler(CommandHandler('start', start))
+dispatcher.add_handler(CommandHandler('getrom', start))
 dispatcher.add_handler(CommandHandler('help', help))
 # dispatcher.add_handler(CallbackQueryHandler(button))
 
