@@ -6,7 +6,7 @@ from telegram import KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove
 
 import requests, json, logging
 
-updater = Updater(token='349522201:AAEpHAxrBwcIrRZGT5039PS0gmJ2zSe9x_8')
+updater = Updater(token='TOKEN')
 dispatcher = updater.dispatcher
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
