@@ -20,7 +20,7 @@ def getrom(bot, update, args):
     
 def checkDevice(bot, update, args):
     check = requests.get('http://api.termux-cn.tk/%s/%s/check' % (args[1], args[0])).json()
-    if check['msg'] == 'success' :
+    if check['msg'].lower() == 'success' :
         getAPI(bot, update, args)
     else :
         update.message.reply_text('参数有误!错误原因：\n' + check['msg'])
